@@ -1,3 +1,5 @@
+![](dragon.jpg)
+
 The Dragon Curve
 
 
