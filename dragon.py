@@ -17,8 +17,8 @@ colors = ["red", "blue", "green", "yellow", "brown", "pink"]
 
 starting_chain = ["F", "-", "H"]
 
-def make_new_chain(temp):
-    if len(temp) > max_path_size:
+def make_new_chain(temp, counter=0):
+    if counter > 20:
         return temp
     new_chain = []
     for elem in temp:
@@ -26,7 +26,7 @@ def make_new_chain(temp):
             new_chain.extend(rules[elem])
         else:
             new_chain.extend(elem)
-    return make_new_chain(new_chain)
+    return make_new_chain(new_chain, counter+1)
 
 chain = make_new_chain(starting_chain)
 
@@ -43,4 +43,4 @@ for i, char in enumerate(chain):
         actions[char](90)
         turtle.forward(stretch)
 
-
+turtle.done()
